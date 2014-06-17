@@ -1,13 +1,14 @@
 <h1><%= @picture.title %></h1>
 
+<p><%= link_to 'Home', root_path %></p> | <p><%= link_to '//Edit', picture_path(@picture) %></p>
+
 <p>
-	<img src="<%= @picture.url %>" alt="It's not here...">
+  <img src="<%= @picture.url %>" alt="It's not here...">
 </p>
 
 <p>
-	<%= @picture.artist %>
+  <%= @picture.artist %>
 </p>
 
-<p><%= link_to 'Home', root_path %></p>
 
 

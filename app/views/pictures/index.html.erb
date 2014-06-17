@@ -1,6 +1,21 @@
-<h1>Pictures!</h1>
+<h1>Pictures(<%= @pictures.length %>)</h1>
 
-<%= @pictures.each do |pic| %>
-	<p><%= pic[:title] %></p><p><%= pic[:artist] %></p>
-	<img src="<%= pic[:url] %>" />
-<% end %> 
+  <%= @pictures.each do |pic| %>
+
+<h2><%= pic[:title] %></h2>
+
+<p>
+  <%= pic[:artist] %>
+</p>
+
+<p>
+  <%= link_to '//Edit', edit_picture_path(pic) %>
+</p>
+
+<p>
+  <%= link_to '//View', picture_path(pic) %>
+<p>
+  <img src="<%= pic[:url] %>" />
+</p>
+
+<% end %>
