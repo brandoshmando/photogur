@@ -1,5 +1,5 @@
 class PicturesController < ApplicationController
-	
+
 	def index
 		@pictures = Picture.all
 	end
@@ -23,7 +23,13 @@ class PicturesController < ApplicationController
 	end
 
 	def update
+    @picture = Picture.find(params[:id])
 
+    if @picture.update_attributes(picture_params)
+      redirect_to @picture
+    else
+      render :edit
+    end
 	end
 
 	private

@@ -1,5 +1,5 @@
 <h1><%= @picture.title %></h1>
- 
+
 <%= form_for @picture do |f| %>
 <p>
 	<%= f.label :title %>
@@ -7,13 +7,16 @@
 </p>
 
 <p>
-	<%= f.label :artist %> 
+	<%= f.label :artist %>
 	<%= f.text_field :artist %>
 </p>
 
 <p>
 	 <%= f.label :url %>
-	 <%= f.text_field :url %> 
+	 <%= f.text_field :url %>
+</p>
+<p>
+  <%= f.submit %>
 </p>
 
 <% end %>
