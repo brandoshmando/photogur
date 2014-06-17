@@ -1,22 +1,24 @@
 class PicturesController < ApplicationController
 	
 	def index
-		@pictures = [
-			{
-				title: "The old church on the coast of the white sea.",
-				artist:  "Sergey Ershov",
-				url:  "http://monicao.s3.amazonaws.com/bitmaker/house.jpg"
-			},
-			{
-				title:  "Sea Power",
-				artist: "Steven Scullion",
-				url: "http://monicao.s3.amazonaws.com/bitmaker/wave.jpg"
-			},
-			{
-				title: "Into the Poppies",
-				artist: "John Wilhelm",
-				url: "http://monicao.s3.amazonaws.com/bitmaker/girl.jpg"
-			}
-		]
+	end
+
+	def new
+	end
+
+	def show
+	end
+
+	def create
+		@picture = Picture.new(picture_params)
+
+		@picture.save
+		redirect_to @picture
+	end
+
+	private
+
+	def picture_params
+		params.require(:picture).permit(:title, :artist, :url)
 	end
 end
