@@ -7,16 +7,16 @@ class PicturesController < ApplicationController
 	def new
 	end
 
-	def show
-		@picture = Picture.find(params[:id])
-	end
-
 	def create
 		@picture = Picture.new(picture_params)
 
 		@picture.save
 		redirect_to @picture
 	end
+
+  def show
+    @picture = Picture.find(params[:id])
+  end
 
 	def edit
 		@picture = Picture.find(params[:id])

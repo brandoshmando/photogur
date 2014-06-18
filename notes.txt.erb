@@ -1,0 +1,50 @@
+Rails Yayyyyyyy
+
+	THE RAILS WAY
+
+Convention vs Configuration
+ 	"Do it our way or it will be very hard for you..."
+ 	"But do it our way, and it will be relatively easy.."
+
+ 	-Business Logic vd UI (Very close to user/problem domain)
+ 	-DRY as FUCK
+ 	-Test
+ 	-Modular(gems)
+
+MVC
+
+-Routes-Point to a method inside of the controller
+-Controller manipulates the data and invokes the view
+-The view is the response
+
+Model:
+	-The model IS NOT the database itself, it only connected
+	-Singular
+
+Controller:
+	-Calls some methods, prepares some data, prepares the view to be sent back to client
+	-One controller manages one resource (usually a model) all the CRUD
+
+View:
+	-Represents different resources in different formats (CSV PDF Json Javascript HTML etc)
+
+MUST learn 3 things:
+	-MVC
+	-Rails
+	-Rails gems
+
+ Form_Tag's
+
+<%= form_tag("/search"), do %>
+
+<%= label_tag (:q, "Search for") %>
+
+<%= text_field_tag(:q) %>
+    -When using form_tag, other attr will generally have _tag at the end.
+
+<%= submit_tag("search") %>
+    -This form is currently set to post. In rails, it automatically sets to that. You must change
+    to get!!!
+   CHANGE: <%= form_tag("/search", method: "get") do %>
+
+ <% end %>
