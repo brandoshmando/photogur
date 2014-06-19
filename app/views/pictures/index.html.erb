@@ -13,4 +13,15 @@
   <img src="<%= pic.url %>" />
 </p>
 <hr>
+  <h1>Older Pictures:(<%= Picture.created_before(1.month.ago).count %>)</h1>
+    <% Picture.created_before(1.month.ago).each do |pic| %>
+      <p>
+        Artist: <strong><%= pic.artist %></strong> | <%= link_to '//Edit', edit_picture_path(pic) %> |  <%= link_to '//View', picture_path(pic) %>
+      </p>
+
+      <p>
+        <img src="<%= pic.url %>" />
+      </p>
+      <hr>
+  <% end %>
 <% end %>
